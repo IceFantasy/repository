@@ -1,6 +1,6 @@
 package com.atguigu.singleton;
 
-
+ 
 /**
  * 1. 保证有一个实力 2.自行创建这个实例 4.向系统提供这个实例 
  * 构造器私有化 
