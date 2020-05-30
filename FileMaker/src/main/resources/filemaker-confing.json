@@ -1,0 +1,22 @@
+{
+	"databases": {
+		"0": {
+			"url": "https://aliapi.goodluckpacking.com/fmi/data/v1/databases/test/sessions",
+			"username": "test",
+			"password": "test",
+			"token":"",
+			"databaseUrl":"https://aliapi.goodluckpacking.com/fmi/data/v1/databases/test"
+		},
+		"1": {
+			"url": "https://aliapi.goodluckpacking.com/fmi/data/v1/databases/test/sessions",
+			"username": "test",
+			"password": "test"
+		},
+		"2": {
+			"url": "https://aliapi.goodluckpacking.com/fmi/data/v1/databases/test/sessions",
+			"username": "test",
+			"password": "test"
+		}
+	},
+	"layouts": {}
+}
