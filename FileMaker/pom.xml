@@ -107,42 +107,8 @@
 		</dependency>
 
 	</dependencies>
-	<plugin>
-		<groupId>org.codehaus.mojo</groupId>
-		<artifactId>appassembler-maven-plugin</artifactId>
-		<version>1.1.1</version>
-		<configuration>
-			<repositoryLayout>flat</repositoryLayout>
-			<repositoryName>lib</repositoryName>
-			<configurationSourceDirectory>src/main/resources/conf</configurationSourceDirectory>
-			<!-- Set the target configuration directory to be used in the bin scripts -->
-			<configurationDirectory>conf</configurationDirectory>
-			<!-- Copy the contents from "/src/main/config" to the target configuration 
-				directory in the assembled application -->
-			<copyConfigurationDirectory>true</copyConfigurationDirectory>
-			<!-- Include the target configuration directory in the beginning of the 
-				classpath declaration in the bin scripts -->
-			<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
-			<!-- prefix all bin files with "mycompany" -->
-			<binPrefix>startup</binPrefix>
-			<!-- set alternative assemble directory -->
-			<assembleDirectory>${project.build.directory}/server</assembleDirectory>
-			<!-- Extra JVM arguments that will be included in the bin scripts -->
-			<extraJvmArguments>-Xms768m -Xmx768m -XX:PermSize=128m
-				-XX:MaxPermSize=256m -XX:NewSize=192m -XX:MaxNewSize=384m
-			</extraJvmArguments>
-			<!-- Generate bin scripts for windows and unix pr default -->
-			<platforms>
-				<platform>windows</platform>
-				<platform>unix</platform>
-			</platforms>
-			<programs>
-				<program>
-					<mainClass>com.coderli.onecoder.server.HypervisorServer</mainClass>
-					<name>startup</name>
-				</program>
-			</programs>
-		</configuration>
-	</plugin>
+	
+	
+	
 	
 </project>
