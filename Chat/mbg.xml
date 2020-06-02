@@ -10,16 +10,16 @@
 		</commentGenerator>
 		<!-- 配置数据库连接 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/ssm_crud" userId="root"
-			password="123456">
+			connectionURL="jdbc:mysql://localhost:3306/chat" userId="root"
+			password="root">
 		</jdbcConnection>
-
+		
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
 		<!-- 指定javaBean生成的位置 -->
-		<javaModelGenerator targetPackage="com.atguigu.crud.bean"
+		<javaModelGenerator targetPackage="com.phantom.chat.bean"
 			targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -29,16 +29,17 @@
 		<sqlMapGenerator targetPackage="mapper" targetProject=".\src\main\resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
-
+		
 		<!-- 指定dao接口生成的位置，mapper接口 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.atguigu.crud.dao" targetProject=".\src\main\java">
+			targetPackage="com.phantom.chat.dao" targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-
-
+		
+		
 		<!-- table指定每个表的生成策略 -->
-		<table tableName="tbl_emp" domainObjectName="Employee"></table>
-		<table tableName="tbl_dept" domainObjectName="Department"></table>
+		<!-- <table tableName="tbl_emp" domainObjectName="Employee"></table>
+		<table tableName="tbl_dept" domainObjectName="Department"></table> -->
+		<table tableName="chat_user" domainObjectName="ChatUser"></table>
 	</context>
 </generatorConfiguration>
