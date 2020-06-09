@@ -5,15 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" class="cye-disabled cye-lm">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">
-		
-		<title>欢迎注册</title>
-		
+
+		<title>欢迎登录</title>
+
 		<%
 			pageContext.setAttribute("APP_PATH", request.getContextPath());
 		%>
@@ -25,32 +25,22 @@
 		<link id="layuicss-skinlayercss" rel="stylesheet" href="${APP_PATH }/static/page/all/layer.css" media="all">
 
 		<link id="networkDiskToolsIconfontLink" rel="stylesheet" type="text/css" href="${APP_PATH }/static/page/all/font_1195811_wvahqlnfkan.css">
-		
-		
+
+
 	</head>
 	<body style="background-image: url(${APP_PATH }/static/page/all/Starry.jpg);"><canvas class="pg-canvas" width="1366"
 		 height="614"></canvas>
-		<div class="login" style="width: 380px;">
+		<div class="login">
 			<div class="login_title">
-				<span>人海茫茫，遇到你是我的缘分，欢迎注册</span>
+				<span>一本书，一个人</span>
 			</div>
 			<div class="login_fields">
-				<form action="${APP_PATH }/chatUser" method="post">
+				<form action="${APP_PATH }/loginchar" method="post">
 					<div class="login_fields__user">
 						<div class="icon">
 							<img alt="" src="${APP_PATH }/static/page/all/user_icon_copy.png">
 						</div>
-						<input id="empName_add_input" name="nickName" placeholder="昵称" maxlength="16" type="text" autocomplete="off" value=""><!-- kbcxy -->
-						<div class="validation">
-							<img alt="" src="${APP_PATH }/static/page/all/tick.png">
-						</div>
-					</div>
-					<div class="login_fields__user">
-						<div class="icon">
-							<img alt="" src="${APP_PATH }/static/page/all/user_icon_copy.png">
-						</div>
-						<input id="email_add_input" name="emailAccount" placeholder="邮箱" maxlength="30" type="text" autocomplete="off" value=""><!-- kbcxy -->
-						<font id='sendemailcode' size="0.5" color="red">发送验证码</font>
+						<input name="emailAccount" placeholder="邮箱" maxlength="30" type="text" autocomplete="off" value=""><!-- kbcxy -->
 						<div class="validation">
 							<img alt="" src="${APP_PATH }/static/page/all/tick.png">
 						</div>
@@ -59,17 +49,7 @@
 						<div class="icon">
 							<img alt="" src="${APP_PATH }/static/page/all/lock_icon_copy.png">
 						</div>
-						<input name="emailCode" placeholder="邮箱验证码" maxlength="4" type="text" autocomplete="off">
-						<font id='checkmailcode' size="0.5" color="red"></font>
-						<div class="validation">
-							<img alt="" src="${APP_PATH }/static/page/all/tick.png">
-						</div>
-					</div>
-					<div class="login_fields__password">
-						<div class="icon">
-							<img alt="" src="${APP_PATH }/static/page/all/lock_icon_copy.png">
-						</div>
-						<input name="password" placeholder="密码" maxlength="16" type="text" autocomplete="off">
+						<input name="password" placeholder="密码" maxlength="30" type="password" autocomplete="off">
 						<div class="validation">
 							<img alt="" src="${APP_PATH }/static/page/all/tick.png">
 						</div>
@@ -78,20 +58,20 @@
 						<div class="icon">
 							<img alt="" src="${APP_PATH }/static/page/all/key.png">
 						</div>
-						<input name="code" placeholder="验证码" maxlength="4" type="text" autocomplete="off">
+						<input name="code" placeholder="验证码" maxlength="6" type="text" autocomplete="off">
 						<div class="validation" style="opacity: 1; right: -5px;top: -3px;">
 							<canvas class="J_codeimg" id="myCanvas" onclick="Code();">对不起，您的浏览器不支持canvas，请下载最新版浏览器!</canvas>
 						</div>
 					</div>
 					<div class="login_fields__submit">
-						<input type="submit" value="注册">
+						<input type="submit" value="登录" />
 					</div>
 				</form>
 			</div>
 			<div class="success">
 			</div>
 			<div class="disclaimer">
-				<p> </p>
+				<p>欢迎登陆 chat <a style="color: red;" href="${APP_PATH }/static/page/cool_regist.jsp">去注册</a></p>
 			</div>
 		</div>
 		<div class="authent">
@@ -114,7 +94,6 @@
 		<script src="${APP_PATH }/static/page/all/Particleground.js" type="text/javascript"></script>
 		<script src="${APP_PATH }/static/page/all/Treatment.js" type="text/javascript"></script>
 		<script src="${APP_PATH }/static/page/all/jquery.mockjax.js" type="text/javascript"></script>
-		<!-- 数据验证 -->
 		<script type="text/javascript">
 			var canGetCookie = 0; //是否支持存储Cookie 0 不支持 1 支持
 			var ajaxmockjax = 1; //是否启用虚拟Ajax的请求响 0 不启用  1 启用
@@ -331,83 +310,25 @@
 	<div id="cye-workaround-body" style="position: absolute; left: 0px; top: 0px; z-index: -2147483646; background: none 0% 0% / 100% no-repeat scroll padding-box border-box rgb(36, 38, 69); height: 663px; width: 1366px;"></div>
 	<div id="cye-workaround-body-image" style="position: absolute; left: 0px; top: 0px; z-index: -2147483645; background: url(&quot;http://www.jq22.com/demo/jQueryLogin201708272212/img/Starry.jpg&quot;) 0% 0% / 100% no-repeat scroll padding-box border-box rgba(0, 0, 0, 0); height: 663px; width: 1366px;"></div>
 	<script type="text/javascript">
-		//校验用户名是否可用
-		$("#empName_add_input").change(function() {
-			//发送ajax请求校验用户名是否可用
-			$("#empName_add_input + a").remove();
-			var empName = this.value;
-			var $nickName = $(this);
-			$.ajax({
-				url: "${APP_PATH}/checkChatUser",
-				data: "empName=" + empName,
-				type: "POST",
-				success: function(result) {
-					if (result.code == 100) {
-						$nickName.after("<a style='color: cornsilk;'>用户名可用！<a/>");
-					} else {
-						$nickName.after("<a style='color: cornsilk;'>用户名不可用！<a/>");
-					}
-				}
-			});
-		});
-		//校验邮箱是否可用
-		$("#email_add_input").change(function() {
-			//发送ajax请求校验邮箱是否可用
-			var $sendcode = $("#sendemailcode");
-			$sendcode.empty();
-			var email = this.value;
-			var $nickName = $(this);
-			$.ajax({
-				url: "${APP_PATH}/checkemail",
-				data: "email=" + email,
-				type: "POST",
-				success: function(result) {
-					if (result.code == 100) {
-						$sendcode.append("发送验证码");
-					} else {
-						$sendcode.append("邮箱不可用！");
-					}
-				}
-			});
-		});
-		
-		// 点击发送邮箱验证码然后发送验证码  phantom@qq.com
-		$("#sendemailcode").click(function () {
-			var $sendcode = $("#sendemailcode");
-			$sendcode.empty();
-			var email = $("#email_add_input").val();
-			$.ajax({
-				url: "${APP_PATH}/sendemailcode",
-				data: "email=" + email,
-				type: "POST",
-				success: function(result) {
-					if (result.code == 100) {
-						$sendcode.append("验证码发送成功！");
-					} else {
-						$sendcode.append(result.extend.va_msg);
-					}
-				}
-			});
-		});
-		// 查看是否验证成功 emailCode
-		$("[name='emailCode']").change(function () {
-			// 1. 获取用户输入的验证码
-			var $font = $("#checkmailcode");
-			$font.empty();// 清空验证信息
-			var checkcode = $(this).val();
-			// 2. ajax请求是否成功
-			$.ajax({
-				url: "${APP_PATH}/checkmailcode/" + checkcode,
-				type: "GET",
-				success: function(result) {
-					if (result.code == 100) {
-						$font.append("验证成功！");
-					} else {
-						$font.append(result.extend.va_msg);
-					}
-				}
-			});
-		});
-		
+		function setTitleMsg () {
+			var titleList = ["三魂断开，七魄延续",
+			 "花朵渐次染红了你的魂魄", 
+			 "光明的背面一定是黑暗吗？正义的背面一定是邪恶吗？", 
+			 "你让我想成为更好的人", 
+			 "朝天堂奔跑", 
+			 "云朵上是开满了樱花，抑或是住满了亡灵", 
+			 "月光的森然，乐律的精魂，一切只是幻影，稍纵即逝", 
+			 "一日换一季，一世等一聚", 
+			 "你的身上，有他们全部的记忆。", 
+			 "记忆被风雪吹散成流萤。", 
+			 "我喜欢火焰的放肆和破裂，因为我可以焚烧一切的枷锁", 
+			 "你是冰雪的王爵，我是末世的苍雪", 
+			 "你真的不愿意原谅我吗", 
+			 "我不在乎那些人，我只在乎你"];
+			return titleList[parseInt(Math.random() * 14)];
+		}
+		setTimeout(function () {
+			$(".login_title span")[0].innerHTML = setTitleMsg();
+		}, 5000)
 	</script>
 </html>

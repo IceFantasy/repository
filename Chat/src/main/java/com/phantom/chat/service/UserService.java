@@ -1,6 +1,7 @@
 package com.phantom.chat.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,6 +65,18 @@ public class UserService {
 		criteria.andEmailCodeEqualTo(checkcode);
 		long count = chatUserMapper.countByExample(example);
 		return count != 0;
+	}
+		
+	public ChatUser getChatuser(ChatUser user) {
+		ChatUserExample example = new ChatUserExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andEmailAccountEqualTo(user.getEmailAccount());
+		criteria.andPasswordEqualTo(user.getPassword());
+		List<ChatUser> chatUserList = chatUserMapper.selectByExample(example);
+		if (chatUserList != null && chatUserList.size() > 0) {
+			return chatUserList.get(0);
+		}
+		return null;
 	}
 
 }

@@ -209,7 +209,7 @@ public class UserController {
 			return Msg.fail().add("va_msg", "邮箱必须是6-16位数字和字母的组合");
 		}
 		//数据库用户名重复校验
-		boolean b = true;//userService.sendCode(email);
+		boolean b = userService.sendCode(email);
 		if(b){
 			return Msg.success();
 		}else{
@@ -217,6 +217,25 @@ public class UserController {
 		}
 	}
 	
+	/**
+	 * 用户登录
+	 * @param user
+	 * @return
+	 * lenovo ： 王淳诚  25887311267@qq.com 
+	 * 2020年6月9日  下午10:13:40
+	 */
+	@RequestMapping(value="/loginchar",method=RequestMethod.POST)
+	public String queryChatUser(@Valid ChatUser user, Model model, HttpServletRequest request){
+		user = userService.getChatuser(user);
+		if (user != null) {
+			model.addAttribute(user);
+            request.getSession(true).setAttribute("user",user);
+			return "redirect:/static/page/proposal.jsp";
+		} else {
+			model.addAttribute("message","登录名或密码错误！");
+			return "redirect:/";
+		}
+	}
 	/**
 	 * 员工保存
 	 * 1、支持JSR303校验
@@ -237,14 +256,16 @@ public class UserController {
 				map.put(fieldError.getField(), fieldError.getDefaultMessage());
 			}
 			map.put("msg", Msg.fail().add("errorFields", map));
-			return "page/cool_regist.jsp";
+			return "redirect:/static/page/cool_regist.jsp";
 		}else{
 			userService.saveUser(user);
 			map.put("msg", Msg.success());
-			return "page/cool_login.jsp";
+			return "redirect:/";
 		}
 		
 	}
+		
+	
 
 	/**
 	 * 导入jackson包。

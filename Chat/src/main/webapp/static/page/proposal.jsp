@@ -16,8 +16,8 @@
 		<script type="text/javascript">
 			$(function() {
 				setTimeout(function() {
-					window.location.replace("static/files/1/index.html");
-				}, 8000);
+					window.location.replace("${APP_PATH }/static/page/index.html");
+				}, 80000000);
 			});
 		</script>
 	</head>

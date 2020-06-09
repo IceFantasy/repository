@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:forward page="/static/page/proposal.jsp"></jsp:forward>
+<jsp:forward page="/cool_login.jsp"></jsp:forward><!-- proposal.jsp -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
