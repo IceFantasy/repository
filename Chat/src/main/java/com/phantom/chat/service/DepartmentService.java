@@ -13,7 +13,7 @@ public class DepartmentService {
 	
 	@Autowired
 	private DepartmentMapper departmentMapper;
-
+	
 	public List<Department> getDepts() {
 		// TODO Auto-generated method stub
 		List<Department> list = departmentMapper.selectByExample(null);

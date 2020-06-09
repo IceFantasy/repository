@@ -15,7 +15,28 @@ public class ChatUser {
 
     private Date createDate;
 
-    public String getUserId() {
+    public ChatUser(String userId, String nickName, String emailAccount, String emailCode, String password,
+			Date createDate) {
+		super();
+		this.userId = userId;
+		this.nickName = nickName;
+		this.emailAccount = emailAccount;
+		this.emailCode = emailCode;
+		this.password = password;
+		this.createDate = createDate;
+	}
+    
+	public ChatUser() {
+		super();
+	}
+	
+	@Override
+	public String toString() {
+		return "ChatUser [userId=" + userId + ", nickName=" + nickName + ", emailAccount=" + emailAccount
+				+ ", emailCode=" + emailCode + ", password=" + password + ", createDate=" + createDate + "]";
+	}
+	
+	public String getUserId() {
         return userId;
     }
 

@@ -33,7 +33,7 @@ public class EmployeeService {
 		// TODO Auto-generated method stub
 		employeeMapper.insertSelective(employee);
 	}
-
+	
 	/**
 	 * 检验用户名是否可用
 	 * 

@@ -1,9 +1,11 @@
 package com.phantom.chat.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.phantom.chat.bean.ChatUser;
 import com.phantom.chat.bean.ChatUserExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface ChatUserMapper {
     long countByExample(ChatUserExample example);
@@ -27,4 +29,6 @@ public interface ChatUserMapper {
     int updateByPrimaryKeySelective(ChatUser record);
 
     int updateByPrimaryKey(ChatUser record);
+    
+	int updateByEmailSelective(ChatUser user);
 }
